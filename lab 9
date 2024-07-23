@@ -1,10 +1,16 @@
 def encode(password):
-  encoded_chars = [str((int(char) + 3) % 10) for char in password]
+  encoded_chars = []
+  for char in password:
+    encoded_char = str((int(char) + 3) % 10)
+    encoded_chars.append(encoded_char)
   return ''.join(encoded_chars)
 
 def decode(password):
-  decoded_chars = [str((int(char) - 3) % 10) for char in password]
-  return ''.join(decoded_chars)
+  decoded_chars = []
+  for char in password:
+    decoded_char = str((int(char) + 3) % 10)
+    decoded_chars.append(decoded_char)
+  return ''.join(encoded_chars)
 
 def main():
   encoded_pw = None
